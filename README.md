@@ -3,6 +3,7 @@ This repository contains translation of the scripts analysing mutidimensional mo
 The code was translated from Matlab to Python. Find the original code and the author, David López Pérez, here: https://github.com/Mirandeitor/entropyPaper and https://github.com/Mirandeitor/frontiersRhythmicPaper
 
 # Scripts
+Descriptions by the original author: https://github.com/Mirandeitor/entropyPaper and https://github.com/Mirandeitor/frontiersRhythmicPaper
 ## Main Script
 
 scriptRhytmic.py -> controls the whole process of analysis. The script loads the data from one of the tasks and processes the data using multidimensional RQA on the time series of interest. Particularly:
