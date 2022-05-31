@@ -29,7 +29,7 @@ from correctForDelay import correctForDelay
 #Select the parent folder where all the subfolders with the sensor data are located
 from loadSensorProcessingOptions import loadSensorProcessingOptions
 
-parent_directory = r"C:\Users\dell\Desktop\Babylab\python\babygym_sensors"
+parent_directory = r"SENSORS_PATH"
 os.chdir(parent_directory)
 print("Current working directory: {0}".format(os.getcwd()))
 files = os.listdir(parent_directory)
@@ -74,7 +74,7 @@ except ValueError as error:
 
 '''Load the conversion of body parts'''
 try:
-    codes_path = r'C:\Users\dell\Desktop\Babylab\python/Babygym python/redataanalysis/Codes.txt'
+    codes_path = r'CODES_PATH'
     codes, body_parts = loadCodes_BodyParts(device[0], codes_path)
 except TypeError as error:
     print('The device information had not been provided\n' + repr(error))
@@ -150,7 +150,7 @@ for participant in dataFiltered_Interpolate:
 
 '''Load the manual coded data
 Select the parent folder where all the subfolders with the sensor data are located'''
-parent_directory_codes = r"C:\Users\dell\Desktop\Babylab\python\babygym coding"
+parent_directory_codes = r"MANUAL_CODING_PATH"
 os.chdir(parent_directory_codes)
 print("Current working directory: {0}".format(os.getcwd()))
 files_elan = os.listdir(parent_directory_codes)
@@ -203,16 +203,8 @@ for i, file in enumerate(glob.glob(os.path.join(parent_directory_codes, '**'), r
                     df2 = pd.DataFrame({'id': file_name, 'label': ann[2], 'StartTime': ann[0]/1000, 'EndTime': ann[1]/1000}, index=[0])
                     df = pd.concat([df, df2], ignore_index=True)
             all_annotations[file_name] = df.sort_values('StartTime').reset_index(drop=True)
-
-            if file_name == '77086_1':
-                if all_annotations['77086_1'].loc[:, 'label'].iloc[-1] == "":
-                    print('HERE')
-                    all_annotations['77086_1'].loc[:, 'label'].iloc[-1] = 'L_touch'
             listOfBehaviours[file_name] = all_annotations[file_name].loc[:, 'label'].unique()
 
-# r_file = open(r"C:\Users\dell\Desktop\Babylab\python\Babygym python\pythonProcessingScript\all_ann.pkl", "wb")
-# pickle.dump(all_annotations, r_file)
-# r_file.close()
 for file_name in all_annotations:
     timeSeriesCoded = pd.DataFrame(data=np.zeros([len(listOfBehaviours[file_name]), totalLength[file_name]]),
                       index=listOfBehaviours[file_name],
@@ -242,9 +234,6 @@ for file_name in timeCoded:
 
     if abs(differenceMSeconds[file_name]) >= 1000:
          displacement_reduced[file_name], timeCoded[file_name], differenceMSeconds[file_name] = cropData(displacement_reduced[file_name], sensorFrequency[file_name], timeCoded[file_name], codingFrequency[file_name], differenceMSeconds[file_name], file_name)
-# h_file = open(r"C:\Users\dell\Desktop\Babylab\python\Babygym python\pythonProcessingScript\diff.pkl", "wb")
-# pickle.dump(differenceMSeconds, h_file)
-# h_file.close()
 
 for file_name in timeCoded:
     resampledTimeSeriesCoded1D[file_name] = {}
@@ -272,13 +261,6 @@ for file_name in timeCoded:
     resampledTimeSeriesCoded[file_name].iloc[:, 0][resampledTimeSeriesCoded[file_name].iloc[:, 0] >= 0.5] = 1
     resampledTimeSeriesCoded[file_name].iloc[:, 0][resampledTimeSeriesCoded[file_name].iloc[:, 0] < 0.5] = 0
 
-# f_file = open(r"C:\Users\dell\Desktop\Babylab\python\Babygym python\pythonProcessingScript\coded_res.pkl", "wb")
-# pickle.dump(resampledTimeSeriesCoded, f_file)
-# f_file.close()
-#
-# b_file = open(r"C:\Users\dell\Desktop\Babylab\python\Babygym python\pythonProcessingScript\coded_raw.pkl", "wb")
-# pickle.dump(timeCoded, b_file)
-# b_file.close()
 
 ''' 2-. Realign the time series of sensors_wide in relation to the coded data'''
 W = 150
@@ -331,13 +313,11 @@ for participant in resampledTimeSeriesCodedCorrected:
 
         startPositions = list(np.where(difference == 1)[0])
         endPositions = list(np.where(difference == -1)[0])
-        labelSensor = []
-        if label == "":
-            print('ERROR: {0}: {1}'.format(participant, label))
-            label = "L_touch"
+
         if label[0] == 'R': limbs = ['InfantRightArm']
         elif label[0] == 'L': limbs = ['InfantLeftArm']
         elif label[0] == 'b': limbs = ['InfantRightArm', 'InfantLeftArm']
+            
         labelSensors = {}
         labelSensor = []
         if label[0] == 'R' or label[0] == 'L':
@@ -367,22 +347,6 @@ for participant in resampledTimeSeriesCodedCorrected:
 
 for participant in timeCoded:
     timeCoded[participant] = timeCoded[participant].transpose()
-
-# a_file = open(r"C:\Users\dell\Desktop\Babylab\python\Babygym python\pythonProcessingScript\coded_res.pkl", "wb")
-# pickle.dump(resampledTimeSeriesCodedCorrected, a_file)
-# a_file.close()
-
-
-
-print('Data saved')
-
-# b_file = open(r"C:\Users\dell\Desktop\Babylab\python\Babygym python\pythonProcessingScript\coded_raw.pkl", "wb")
-# pickle.dump(timeCoded, b_file)
-# b_file.close()
-#
-# c_file = open(r"C:\Users\dell\Desktop\Babylab\python\Babygym python\pythonProcessingScript\sensor.pkl", "wb")
-# pickle.dump(displacement_reduced, c_file)
-# c_file.close()
 
 numberReachingBlocks = {}
 durationReaching = {}
@@ -417,8 +381,3 @@ for participant in movementsCategorised:
     df['id'] = participant
     df_list.append(df)
 descriptives = pd.concat(df_list)
-#
-# descriptives.to_excel(
-#          r"C:\Users\dell\Desktop\Babylab\python\Babygym python\pythonProcessingScript\descriptives.xlsx",
-#           encoding='utf-8')
-
