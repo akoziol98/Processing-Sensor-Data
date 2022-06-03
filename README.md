@@ -24,10 +24,10 @@ interpolateSensorData.py -> this function interpolates the data from the sensor 
 prepareDataForInterpolation.py -> this function takes an input array and return the data ready for interpolation with the missing values exactly in the place that it should be.
 loadSensorProcessingOptions.py -> this function asks the user which kind of data will be analysed (quaternions or acceleration).
 estimateSensorDisplacement.py -> estimate the movement (acc or quaternions) based on the sensor filtered data and options previously asked to the user.
-estimateDelaySide.py -> return the delay between the coded time series and the sensor time series.
-cropData.py -> if the difference between video and sensor data is more than 1 second, this script is asking the user to pick which part of the longer data to cut
-correctForDelaySide.py -> corrects video or sensor data time series based on the delay quantified in the delay estimation method.
-categorisedMovementAboveMean.py -> convert to 1s and 0s the input time series so it can be later used to estimate the delay between the manually coded data and the sensor recordings or to estimate the number of reaching.
+estimateDelaySide.py -> return the delay between the coded time series and the sensor time series.//
+cropData.py -> if the difference between video and sensor data is more than 1 second, this script is asking the user to pick which part of the longer data to cut//
+correctForDelaySide.py -> corrects video or sensor data time series based on the delay quantified in the delay estimation method.//
+categorisedMovementAboveMean.py -> convert to 1s and 0s the input time series so it can be later used to estimate the delay between the manually coded data and the sensor recordings or to estimate the number of reaching.//
 drpdfromtsCat.py -> explore the cross-recurrence diagonal profile of two-time series to find the delay between them.
 
 # Citation
