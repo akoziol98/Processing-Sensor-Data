@@ -46,4 +46,4 @@ If you ever use parts of this code for your analysis please cite:
 - Laudańska Z., López Pérez D., Radkowska A., Babis K., Malinowska-Korczak A., Wallot S. & Tomalski P. (2022). Changes in the complexity of limbs movements during the first year of life across different tasks. Entropy, 24(4), 552. doi: 10.3390/e24040552
 
 # Contact
-Any missing function or questions about the code please contact the original author: d.lopez@psych.pan.pl, or translator to Python: aa.koziol2@student.uw.edu.pl
+Any missing function or questions about the code please contact the original author: d.lopez@psych.pan.pl, or translator to Python: akoziol@sd.psych.pan.pl
