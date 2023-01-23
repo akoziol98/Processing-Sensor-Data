@@ -11,12 +11,8 @@ import warnings
 import numpy as np
 import pandas as pd
 import pympi
-from matplotlib import pyplot as plt
 from scipy.interpolate import interp2d, interp1d
-import seaborn as sns
-
 from categorisedMovementAboveMean import categorisedMovementAboveMean
-from cropData import cropData
 from estimateDelaySide import estimateDelaySide
 from estimateSensorDisplacement import estimateSensorDisplacement
 from filterSensorData import filterSensorData
@@ -29,7 +25,7 @@ from correctForDelay import correctForDelay
 #Select the parent folder where all the subfolders with the sensor data are located
 from loadSensorProcessingOptions import loadSensorProcessingOptions
 
-parent_directory = r"SENSORS_PATH"
+parent_directory = SENSORS_FOLDER
 os.chdir(parent_directory)
 print("Current working directory: {0}".format(os.getcwd()))
 files = os.listdir(parent_directory)
@@ -74,7 +70,7 @@ except ValueError as error:
 
 '''Load the conversion of body parts'''
 try:
-    codes_path = r'CODES_PATH'
+    codes_path = CODES.TXT
     codes, body_parts = loadCodes_BodyParts(device[0], codes_path)
 except TypeError as error:
     print('The device information had not been provided\n' + repr(error))
@@ -139,7 +135,7 @@ for participant in new_data:
     dataFiltered[participant] = filterSensorData(new_data[participant], sensorFrequency[participant], participant)
 
 dataFiltered_Interpolate = dataFiltered.copy()
-'''Select the plot you want to perform and if you want to compare accelerate and quaternion based measures'''
+'''Select the plot you want to perform and if you want to compare acceleration and quaternion based measures'''
 compareAll, movement1D, quaternionDistances = loadSensorProcessingOptions()
 '''Calculate the sensorMovement based on the selected options and filteredData'''
 displacement = {}
@@ -150,7 +146,7 @@ for participant in dataFiltered_Interpolate:
 
 '''Load the manual coded data
 Select the parent folder where all the subfolders with the sensor data are located'''
-parent_directory_codes = r"MANUAL_CODING_PATH"
+parent_directory_codes = MANUAL_CODING_FOLDER
 os.chdir(parent_directory_codes)
 print("Current working directory: {0}".format(os.getcwd()))
 files_elan = os.listdir(parent_directory_codes)
@@ -162,6 +158,7 @@ filesCodingNames = [x for x in filesCodingNames if x not in ['.', '..', '.DS_Sto
 '''2.1 Loop through the list of unique codes and load the ones that has sensor data'''
 ''' Elan processing based on https://dopefishh.github.io/pympi/Elan.html '''
 coded_sensors = [x for x in filesCodingNames if x in sensor_id_list and x in filesCodingNames]
+
 elan_data = {}
 listOfBehaviours = {}
 totalSeconds = {}
@@ -203,6 +200,7 @@ for i, file in enumerate(glob.glob(os.path.join(parent_directory_codes, '**'), r
                     df2 = pd.DataFrame({'id': file_name, 'label': ann[2], 'StartTime': ann[0]/1000, 'EndTime': ann[1]/1000}, index=[0])
                     df = pd.concat([df, df2], ignore_index=True)
             all_annotations[file_name] = df.sort_values('StartTime').reset_index(drop=True)
+
             listOfBehaviours[file_name] = all_annotations[file_name].loc[:, 'label'].unique()
 
 for file_name in all_annotations:
@@ -224,6 +222,7 @@ for file_name in all_annotations:
 resampledTimeSeriesCoded = {}
 resampledTimeSeriesCoded1D = {}
 differenceMSeconds = {}
+differ = {}
 # First crop the data if the difference between them is too big
 
 for file_name in timeCoded:
@@ -231,9 +230,7 @@ for file_name in timeCoded:
     print('{2}: Sensors: {0}, manual coded: {1}'.format(np.min(list(displacement_reduced[file_name].values())[0].shape), timeCoded[file_name].shape[1], file_name))
 
     differenceMSeconds[file_name] = int(round(np.min(list(displacement_reduced[file_name].values())[0].shape) * (1000 / sensorFrequency[file_name])) - totalSeconds[file_name] * 1000)
-
-    if abs(differenceMSeconds[file_name]) >= 1000:
-         displacement_reduced[file_name], timeCoded[file_name], differenceMSeconds[file_name] = cropData(displacement_reduced[file_name], sensorFrequency[file_name], timeCoded[file_name], codingFrequency[file_name], differenceMSeconds[file_name], file_name)
+    differ[file_name] = int(round(np.min(list(displacement_reduced[file_name].values())[0].shape) * (1000 / sensorFrequency[file_name])) - totalSeconds[file_name] * 1000)
 
 for file_name in timeCoded:
     resampledTimeSeriesCoded1D[file_name] = {}
@@ -261,7 +258,6 @@ for file_name in timeCoded:
     resampledTimeSeriesCoded[file_name].iloc[:, 0][resampledTimeSeriesCoded[file_name].iloc[:, 0] >= 0.5] = 1
     resampledTimeSeriesCoded[file_name].iloc[:, 0][resampledTimeSeriesCoded[file_name].iloc[:, 0] < 0.5] = 0
 
-
 ''' 2-. Realign the time series of sensors_wide in relation to the coded data'''
 W = 150
 
@@ -270,35 +266,42 @@ delay = {}
 labelSynch = {}
 
 resampledTimeSeriesCodedCorrected = resampledTimeSeriesCoded.copy()
-
+custom_sync = True
 for participant in resampledTimeSeriesCoded:
     assert len(all_annotations[participant]['id'].unique()) == 1
 
     all_columns = all_annotations[participant]['label'].unique().tolist()
-    r_columns = [True if x.startswith('R') else False for x in all_annotations[participant]['label']]
+    if custom_sync:
+        print('Custom synchronizing')
+        r_columns = [True if x == 'R_sync' else False for x in all_annotations[participant]['label']]
+        l_columns = [True if x == 'L_sync' else False for x in all_annotations[participant]['label']]
+        clap = [True if x == 'clap' else False for x in all_annotations[participant]['label']]
+        r_count, l_count, clap_count = 0, 0, 0
 
-    r_count, l_count, bi_count = 0, 0, 0
-    test_count = 0
-    for label, count in all_annotations[participant].groupby('label').count().loc[:, 'id'].iteritems():
-            if label[0] == 'R':
-                label = 'R'
+        for label, count in all_annotations[participant].groupby('label').count().loc[:, 'id'].items():
+            if label == 'R_sync':
                 r_count += count
-            elif label[0] == 'L':
-                label = 'L'
+            elif label == 'L_sync':
                 l_count += count
-            elif label[0] == 'b':
-                label = 'bi'
-                bi_count += count
-            label_count = [['R', r_count], ['L', l_count], ['bi', bi_count]]
+            elif label== 'clap':
+                clap_count += count
+
+            label_count = [['R_sync', r_count], ['L_sync', l_count], ['clap', clap_count]]
             label_count = sorted(label_count, key=lambda x: x[1], reverse=True)
 
-    synch_label, num = SideSelectSynchronization(label_count, participant, True)
+        synch_label = label_count[0][0]
+        num = label_count[0][1]
 
-    delay[participant], labelSynch[participant] = estimateDelaySide(resampledTimeSeriesCoded[participant].copy(), displacement_reduced[participant].copy(), W, synch_label, num, participant, differenceMSeconds[participant])
-    resampledTimeSeriesCodedCorrected[participant] = correctForDelay(resampledTimeSeriesCoded[participant], delay[participant])
-
+        delay[participant], labelSynch[participant] = estimateDelaySide(resampledTimeSeriesCoded[participant].copy(),
+                                                                        displacement_reduced[participant].copy(), W,
+                                                                        synch_label, num, participant,
+                                                                        differenceMSeconds[participant])
+        resampledTimeSeriesCodedCorrected[participant] = correctForDelay(resampledTimeSeriesCoded[participant],
+                                                                         delay[participant])
+    else:
+        print('Something is wrong with synchronisation')
 movementsCategorised = {}
-# Extract only those periods of reaching to remove movement "noise" and calculate the "reaching" time series
+# Extract only those periods of reaching/clapping to remove movement "noise" and calculate the "reaching"/"clapping" time series
 
 for participant in resampledTimeSeriesCodedCorrected:
     movementsCategorised[participant] = {}
@@ -313,14 +316,18 @@ for participant in resampledTimeSeriesCodedCorrected:
 
         startPositions = list(np.where(difference == 1)[0])
         endPositions = list(np.where(difference == -1)[0])
-
+        labelSensor = []
+        if label == "":
+            print('ERROR: {0}: {1}'.format(participant, label))
+            label = "L_touch"
         if label[0] == 'R': limbs = ['InfantRightArm']
         elif label[0] == 'L': limbs = ['InfantLeftArm']
         elif label[0] == 'b': limbs = ['InfantRightArm', 'InfantLeftArm']
-            
         labelSensors = {}
         labelSensor = []
-        if label[0] == 'R' or label[0] == 'L':
+        if label.strip() == 'clap' or label.strip() == 'R_sync' or label.strip() == 'L_sync':
+            continue
+        elif label[0] == 'R' or label[0] == 'L':
             for limb in limbs:
                 for iBlock in range(numberOfReachingBlocks):
                     labelSensor = np.concatenate((labelSensor, displacement_reduced[participant][limb][startPositions[iBlock]:endPositions[iBlock]]), axis=None)
@@ -334,6 +341,7 @@ for participant in resampledTimeSeriesCodedCorrected:
                 labelSensors[label][limb] = labelSensor
         else:
             warnings.warn(('Something is wrong'))
+            print('x',label,'x')
         #Categorised around the mean to create time series of reaching periods
         if label[0] == 'R' or label[0] == 'L':
             movementsCategorised[participant][label], _ = categorisedMovementAboveMean(labelSensors[label], 3, 3)
@@ -348,36 +356,3 @@ for participant in resampledTimeSeriesCodedCorrected:
 for participant in timeCoded:
     timeCoded[participant] = timeCoded[participant].transpose()
 
-numberReachingBlocks = {}
-durationReaching = {}
-frequencyReaching = {}
-numberReaching = {}
-
-''' Add some descriptive measures based on coded data (mean duration of reaching periods + number of them) '''
-for participant in movementsCategorised:
-    numberReachingBlocks[participant] = {}
-    durationReaching[participant] = {}
-    frequencyReaching[participant] = {}
-    numberReaching[participant] = {}
-    for label in timeCoded[participant].columns:
-        difference = np.diff(np.concatenate(([0], timeCoded[participant].loc[:, label].to_numpy(), [0]), axis=None))
-        #Calculate the number of blocks
-        numberReachingBlocks[participant][label] = int(np.sum(difference[difference == 1]))
-        #Calculate the duration
-        durationReaching[participant][label] = np.mean(abs((np.where(difference == 1)[0] - np.where(difference == -1)[0]) * codingFrequency[participant]), axis=0)
-        #Number of reaching
-        differenceCategorised = np.diff(np.concatenate(([0], movementsCategorised[participant][label], [0]), axis=None))
-        numberReaching[participant][label] = np.sum(differenceCategorised[differenceCategorised == 1])
-        if numberReaching[participant][label] != 0:
-        #Estimate the reaching frequency
-            frequencyReaching[participant][label] = 1 / (len(movementsCategorised[participant][label]) / (numberReaching[participant][label] * 60))
-        else:
-            frequencyReaching[participant][label] = 0
-
-df_list = []
-for participant in movementsCategorised:
-    df = pd.DataFrame([numberReachingBlocks[participant], durationReaching[participant], numberReaching[participant], frequencyReaching[participant]],
-                      index=['numberReachingBlocks', 'durationReaching', 'numberReaching', 'frequencyReaching'])
-    df['id'] = participant
-    df_list.append(df)
-descriptives = pd.concat(df_list)
