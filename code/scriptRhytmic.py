@@ -25,7 +25,7 @@ from correctForDelay import correctForDelay
 #Select the parent folder where all the subfolders with the sensor data are located
 from loadSensorProcessingOptions import loadSensorProcessingOptions
 
-parent_directory = SENSORS_FOLDER
+parent_directory = r'G:\Mój dysk\Processing-Sensor-Data\Processing-Sensor-Data\code\babygym_sensors'
 os.chdir(parent_directory)
 print("Current working directory: {0}".format(os.getcwd()))
 files = os.listdir(parent_directory)
@@ -37,6 +37,7 @@ subFolders = [x for x in subFolders if x not in ['.', '..', '.DS_Store']]
 data = {}
 device = []
 sensorFrequency = {}
+
 for i, file in enumerate(glob.glob(os.path.join(parent_directory, '**'), recursive=True)):
 #This loop goes though all items inside parent directory and subdirectories, checks if it is a file and
 #ignores files from folders with specified names
@@ -70,7 +71,7 @@ except ValueError as error:
 
 '''Load the conversion of body parts'''
 try:
-    codes_path = CODES.TXT
+    codes_path = r'G:\Mój dysk\Processing-Sensor-Data\Processing-Sensor-Data\code\Codes.txt'
     codes, body_parts = loadCodes_BodyParts(device[0], codes_path)
 except TypeError as error:
     print('The device information had not been provided\n' + repr(error))
@@ -132,6 +133,7 @@ dataFiltered = {}
 print('Filtering and Interpolating data')
 
 for participant in new_data:
+    print(participant)
     dataFiltered[participant] = filterSensorData(new_data[participant], sensorFrequency[participant], participant)
 
 dataFiltered_Interpolate = dataFiltered.copy()
@@ -146,7 +148,7 @@ for participant in dataFiltered_Interpolate:
 
 '''Load the manual coded data
 Select the parent folder where all the subfolders with the sensor data are located'''
-parent_directory_codes = MANUAL_CODING_FOLDER
+parent_directory_codes = r"G:\Mój dysk\Processing-Sensor-Data\Processing-Sensor-Data\code\babygym coding"
 os.chdir(parent_directory_codes)
 print("Current working directory: {0}".format(os.getcwd()))
 files_elan = os.listdir(parent_directory_codes)

@@ -72,7 +72,7 @@ def filterSensorData(data, frequency, id):
 
                 if df[sensor]['PacketCounter'].iloc[-1] != maxPackageNumber:
                     df_nan = pd.DataFrame(np.nan,
-                             index=range((maxPackageNumber - df[sensor]['PacketCounter'].iloc[-1].astype(int))),
+                             index=range((int(maxPackageNumber) - df[sensor]['PacketCounter'].iloc[-1].astype(int))),
                              columns=cols)
                     df[sensor] = pd.concat([df[sensor], df_nan], ignore_index=True)
                     if np.isnan(df[sensor].loc[df[sensor].index[-1], 'PacketCounter']) and not np.isnan(df[sensor].loc[df[sensor].index[-2], 'PacketCounter']):
