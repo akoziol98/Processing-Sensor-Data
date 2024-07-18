@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ANNOTATION_DOCUMENT AUTHOR="" DATE="2023-01-27T23:36:01+01:00"
+    FORMAT="3.0" VERSION="3.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.mpi.nl/tools/elan/EAFv3.0.xsd">
+    <HEADER MEDIA_FILE="" TIME_UNITS="milliseconds">
+        <MEDIA_DESCRIPTOR
+            MEDIA_URL="file:///C:/Users/dell/Desktop/PHD/Movin videos/T1/77047_1_baby_gym_kam3.avi"
+            MIME_TYPE="video/*" RELATIVE_MEDIA_URL="../../../PHD/Movin videos/T1/77047_1_baby_gym_kam3.avi"/>
+        <PROPERTY NAME="URN">urn:nl-mpi-tools-elan-eaf:92c8f47b-f840-4362-b162-0d93953947d8</PROPERTY>
+        <PROPERTY NAME="lastUsedAnnotationId">95</PROPERTY>
+    </HEADER>
+    <TIME_ORDER>
+        <TIME_SLOT TIME_SLOT_ID="ts1" TIME_VALUE="6931"/>
+        <TIME_SLOT TIME_SLOT_ID="ts2" TIME_VALUE="8310"/>
+        <TIME_SLOT TIME_SLOT_ID="ts3" TIME_VALUE="18498"/>
+        <TIME_SLOT TIME_SLOT_ID="ts4" TIME_VALUE="19867"/>
+        <TIME_SLOT TIME_SLOT_ID="ts5" TIME_VALUE="20379"/>
+        <TIME_SLOT TIME_SLOT_ID="ts6" TIME_VALUE="22896"/>
+        <TIME_SLOT TIME_SLOT_ID="ts7" TIME_VALUE="25920"/>
+        <TIME_SLOT TIME_SLOT_ID="ts8" TIME_VALUE="27897"/>
+        <TIME_SLOT TIME_SLOT_ID="ts9" TIME_VALUE="42808"/>
+        <TIME_SLOT TIME_SLOT_ID="ts10" TIME_VALUE="45694"/>
+        <TIME_SLOT TIME_SLOT_ID="ts11" TIME_VALUE="46836"/>
+        <TIME_SLOT TIME_SLOT_ID="ts12" TIME_VALUE="47869"/>
+        <TIME_SLOT TIME_SLOT_ID="ts13" TIME_VALUE="59095"/>
+        <TIME_SLOT TIME_SLOT_ID="ts14" TIME_VALUE="61877"/>
+        <TIME_SLOT TIME_SLOT_ID="ts15" TIME_VALUE="65859"/>
+        <TIME_SLOT TIME_SLOT_ID="ts16" TIME_VALUE="67693"/>
+        <TIME_SLOT TIME_SLOT_ID="ts17" TIME_VALUE="77960"/>
+        <TIME_SLOT TIME_SLOT_ID="ts18" TIME_VALUE="78480"/>
+        <TIME_SLOT TIME_SLOT_ID="ts19" TIME_VALUE="89095"/>
+        <TIME_SLOT TIME_SLOT_ID="ts20" TIME_VALUE="91613"/>
+        <TIME_SLOT TIME_SLOT_ID="ts21" TIME_VALUE="92550"/>
+        <TIME_SLOT TIME_SLOT_ID="ts22" TIME_VALUE="93023"/>
+        <TIME_SLOT TIME_SLOT_ID="ts23" TIME_VALUE="94160"/>
+        <TIME_SLOT TIME_SLOT_ID="ts24" TIME_VALUE="95198"/>
+        <TIME_SLOT TIME_SLOT_ID="ts25" TIME_VALUE="103730"/>
+        <TIME_SLOT TIME_SLOT_ID="ts26" TIME_VALUE="104064"/>
+        <TIME_SLOT TIME_SLOT_ID="ts27" TIME_VALUE="105152"/>
+        <TIME_SLOT TIME_SLOT_ID="ts28" TIME_VALUE="105440"/>
+        <TIME_SLOT TIME_SLOT_ID="ts29" TIME_VALUE="107068"/>
+        <TIME_SLOT TIME_SLOT_ID="ts30" TIME_VALUE="108448"/>
+        <TIME_SLOT TIME_SLOT_ID="ts31" TIME_VALUE="112620"/>
+        <TIME_SLOT TIME_SLOT_ID="ts32" TIME_VALUE="113758"/>
+        <TIME_SLOT TIME_SLOT_ID="ts33" TIME_VALUE="115034"/>
+        <TIME_SLOT TIME_SLOT_ID="ts34" TIME_VALUE="116100"/>
+        <TIME_SLOT TIME_SLOT_ID="ts35" TIME_VALUE="117403"/>
+        <TIME_SLOT TIME_SLOT_ID="ts36" TIME_VALUE="119551"/>
+        <TIME_SLOT TIME_SLOT_ID="ts37" TIME_VALUE="132137"/>
+        <TIME_SLOT TIME_SLOT_ID="ts38" TIME_VALUE="133103"/>
+        <TIME_SLOT TIME_SLOT_ID="ts39" TIME_VALUE="150758"/>
+        <TIME_SLOT TIME_SLOT_ID="ts40" TIME_VALUE="152241"/>
+        <TIME_SLOT TIME_SLOT_ID="ts41" TIME_VALUE="185779"/>
+        <TIME_SLOT TIME_SLOT_ID="ts42" TIME_VALUE="187471"/>
+        <TIME_SLOT TIME_SLOT_ID="ts43" TIME_VALUE="208537"/>
+        <TIME_SLOT TIME_SLOT_ID="ts44" TIME_VALUE="210636"/>
+    </TIME_ORDER>
+    <TIER ANNOTATOR="AK" LINGUISTIC_TYPE_REF="R_hold" TIER_ID="R_hold">
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a1"
+                CVE_REF="cveid_6a8f221e-7c04-4053-be64-33fea251858c"
+                TIME_SLOT_REF1="ts1" TIME_SLOT_REF2="ts2">
+                <ANNOTATION_VALUE>R_hold</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a32"
+                CVE_REF="cveid_6a8f221e-7c04-4053-be64-33fea251858c"
+                TIME_SLOT_REF1="ts9" TIME_SLOT_REF2="ts10">
+                <ANNOTATION_VALUE>R_hold</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a33"
+                CVE_REF="cveid_6a8f221e-7c04-4053-be64-33fea251858c"
+                TIME_SLOT_REF1="ts11" TIME_SLOT_REF2="ts12">
+                <ANNOTATION_VALUE>R_hold</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+    </TIER>
+    <TIER ANNOTATOR="AK" LINGUISTIC_TYPE_REF="R_non-touch" TIER_ID="R_non-touch"/>
+    <TIER ANNOTATOR="AK" LINGUISTIC_TYPE_REF="L_hold" TIER_ID="L_hold"/>
+    <TIER ANNOTATOR="AK" LINGUISTIC_TYPE_REF="L_non-touch" TIER_ID="L-non-touch">
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a4"
+                CVE_REF="cveid_90c3ce01-2083-4ebd-aab7-1a900cf58ff7"
+                TIME_SLOT_REF1="ts3" TIME_SLOT_REF2="ts4">
+                <ANNOTATION_VALUE>L_non-touch</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a36"
+                CVE_REF="cveid_90c3ce01-2083-4ebd-aab7-1a900cf58ff7"
+                TIME_SLOT_REF1="ts26" TIME_SLOT_REF2="ts28">
+                <ANNOTATION_VALUE>L_non-touch</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+    </TIER>
+    <TIER ANNOTATOR="AK" LINGUISTIC_TYPE_REF="bi_hold" TIER_ID="bi_hold">
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a37"
+                CVE_REF="cveid_e21946c7-3082-4a37-a6b0-69937cc1ec31"
+                TIME_SLOT_REF1="ts41" TIME_SLOT_REF2="ts42">
+                <ANNOTATION_VALUE>bi_hold</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a38"
+                CVE_REF="cveid_e21946c7-3082-4a37-a6b0-69937cc1ec31"
+                TIME_SLOT_REF1="ts43" TIME_SLOT_REF2="ts44">
+                <ANNOTATION_VALUE>bi_hold</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+    </TIER>
+    <TIER ANNOTATOR="AK" LINGUISTIC_TYPE_REF="bi_non-touch" TIER_ID="bi_non-touch">
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a6"
+                CVE_REF="cveid_27d746dd-8101-4991-ae5d-4cc69264557e"
+                TIME_SLOT_REF1="ts33" TIME_SLOT_REF2="ts36">
+                <ANNOTATION_VALUE>bi_non-touch</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+    </TIER>
+    <TIER ANNOTATOR="AK" LINGUISTIC_TYPE_REF="R_exp" TIER_ID="R_exp">
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a7"
+                CVE_REF="cveid_7e8fe70b-1981-40b1-a433-2d7ae555c2cc"
+                TIME_SLOT_REF1="ts7" TIME_SLOT_REF2="ts8">
+                <ANNOTATION_VALUE>R_exp</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+    </TIER>
+    <TIER ANNOTATOR="AK" LINGUISTIC_TYPE_REF="L_exp" TIER_ID="L_exp"/>
+    <TIER ANNOTATOR="AK" LINGUISTIC_TYPE_REF="bi_exp" TIER_ID="bi_exp"/>
+    <TIER ANNOTATOR="AK" LINGUISTIC_TYPE_REF="R_touch" TIER_ID="R_touch">
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a10"
+                CVE_REF="cveid_281e34ee-e281-4e30-8a51-cb4b4a6f2785"
+                TIME_SLOT_REF1="ts31" TIME_SLOT_REF2="ts32">
+                <ANNOTATION_VALUE>R_touch</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a11"
+                CVE_REF="cveid_281e34ee-e281-4e30-8a51-cb4b4a6f2785"
+                TIME_SLOT_REF1="ts37" TIME_SLOT_REF2="ts38">
+                <ANNOTATION_VALUE>R_touch</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+    </TIER>
+    <TIER ANNOTATOR="AK" LINGUISTIC_TYPE_REF="L_touch" TIER_ID="L_touch">
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a13"
+                CVE_REF="cveid_08576034-f69c-479d-8250-7d6494b103de"
+                TIME_SLOT_REF1="ts5" TIME_SLOT_REF2="ts6">
+                <ANNOTATION_VALUE>L_touch</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a16"
+                CVE_REF="cveid_08576034-f69c-479d-8250-7d6494b103de"
+                TIME_SLOT_REF1="ts29" TIME_SLOT_REF2="ts30">
+                <ANNOTATION_VALUE>L_touch</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a17"
+                CVE_REF="cveid_08576034-f69c-479d-8250-7d6494b103de"
+                TIME_SLOT_REF1="ts39" TIME_SLOT_REF2="ts40">
+                <ANNOTATION_VALUE>L_touch</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+    </TIER>
+    <TIER ANNOTATOR="AK" LINGUISTIC_TYPE_REF="bi_touch" TIER_ID="bi_touch">
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a19"
+                CVE_REF="cveid_e21946c7-3082-4a37-a6b0-69937cc1ec31"
+                TIME_SLOT_REF1="ts13" TIME_SLOT_REF2="ts14">
+                <ANNOTATION_VALUE>bi_touch</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a34"
+                CVE_REF="cveid_e21946c7-3082-4a37-a6b0-69937cc1ec31"
+                TIME_SLOT_REF1="ts15" TIME_SLOT_REF2="ts16">
+                <ANNOTATION_VALUE>bi_touch</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a35"
+                CVE_REF="cveid_e21946c7-3082-4a37-a6b0-69937cc1ec31"
+                TIME_SLOT_REF1="ts23" TIME_SLOT_REF2="ts24">
+                <ANNOTATION_VALUE>bi_touch</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+    </TIER>
+    <TIER ANNOTATOR="AK" LINGUISTIC_TYPE_REF="R_sync" TIER_ID="R_sync">
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a90"
+                CVE_REF="cveid_fdff3e8d-069e-43e8-a591-3afdf4630d1d"
+                TIME_SLOT_REF1="ts17" TIME_SLOT_REF2="ts18">
+                <ANNOTATION_VALUE>R_sync</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a94"
+                CVE_REF="cveid_fdff3e8d-069e-43e8-a591-3afdf4630d1d"
+                TIME_SLOT_REF1="ts19" TIME_SLOT_REF2="ts20">
+                <ANNOTATION_VALUE>R_sync</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a92"
+                CVE_REF="cveid_fdff3e8d-069e-43e8-a591-3afdf4630d1d"
+                TIME_SLOT_REF1="ts21" TIME_SLOT_REF2="ts22">
+                <ANNOTATION_VALUE>R_sync</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a93"
+                CVE_REF="cveid_fdff3e8d-069e-43e8-a591-3afdf4630d1d"
+                TIME_SLOT_REF1="ts25" TIME_SLOT_REF2="ts27">
+                <ANNOTATION_VALUE>R_sync</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a95"
+                CVE_REF="cveid_fdff3e8d-069e-43e8-a591-3afdf4630d1d"
+                TIME_SLOT_REF1="ts34" TIME_SLOT_REF2="ts35">
+                <ANNOTATION_VALUE>R_sync</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+    </TIER>
+    <LINGUISTIC_TYPE GRAPHIC_REFERENCES="false"
+        LINGUISTIC_TYPE_ID="default-lt" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONTROLLED_VOCABULARY_REF="R_touch"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="R_touch" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONTROLLED_VOCABULARY_REF="R_non-touch"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="R_non-touch" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONTROLLED_VOCABULARY_REF="L_touch"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="L_touch" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONTROLLED_VOCABULARY_REF="L_non-touch"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="L_non-touch" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONTROLLED_VOCABULARY_REF="bi_touch"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="bi_touch" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONTROLLED_VOCABULARY_REF="bi_non-touch"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="bi_non-touch" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONTROLLED_VOCABULARY_REF="R_exp"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="R_exp" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONTROLLED_VOCABULARY_REF="L_exp"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="L_exp" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONTROLLED_VOCABULARY_REF="bi_exp"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="bi_exp" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONTROLLED_VOCABULARY_REF="R_hold"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="R_hold" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONTROLLED_VOCABULARY_REF="L_hold"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="L_hold" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONTROLLED_VOCABULARY_REF="bi_hold"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="bi_hold" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONTROLLED_VOCABULARY_REF="R_sync"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="R_sync" TIME_ALIGNABLE="true"/>
+    <LANGUAGE LANG_DEF="http://cdb.iso.org/lg/CDB-00130975-001"
+        LANG_ID="und" LANG_LABEL="undetermined (und)"/>
+    <CONSTRAINT
+        DESCRIPTION="Time subdivision of parent annotation's time interval, no time gaps allowed within this interval" STEREOTYPE="Time_Subdivision"/>
+    <CONSTRAINT
+        DESCRIPTION="Symbolic subdivision of a parent annotation. Annotations refering to the same parent are ordered" STEREOTYPE="Symbolic_Subdivision"/>
+    <CONSTRAINT DESCRIPTION="1-1 association with a parent annotation" STEREOTYPE="Symbolic_Association"/>
+    <CONSTRAINT
+        DESCRIPTION="Time alignable annotations within the parent annotation's time interval, gaps are allowed" STEREOTYPE="Included_In"/>
+    <CONTROLLED_VOCABULARY CV_ID="R_touch">
+        <DESCRIPTION LANG_REF="und"/>
+        <CV_ENTRY_ML CVE_ID="cveid_281e34ee-e281-4e30-8a51-cb4b4a6f2785">
+            <CVE_VALUE LANG_REF="und">R_touch</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="L_touch">
+        <DESCRIPTION LANG_REF="und"/>
+        <CV_ENTRY_ML CVE_ID="cveid_08576034-f69c-479d-8250-7d6494b103de">
+            <CVE_VALUE LANG_REF="und">L_touch</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="R_exp">
+        <DESCRIPTION LANG_REF="und"/>
+        <CV_ENTRY_ML CVE_ID="cveid_7e8fe70b-1981-40b1-a433-2d7ae555c2cc">
+            <CVE_VALUE LANG_REF="und">R_exp</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="R_non-touch">
+        <DESCRIPTION LANG_REF="und"/>
+        <CV_ENTRY_ML CVE_ID="cveid_2633ec22-0243-4ee9-aa60-94c73ef1fbb6">
+            <CVE_VALUE LANG_REF="und">R_non-touch</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="L_hold">
+        <DESCRIPTION LANG_REF="und"/>
+        <CV_ENTRY_ML CVE_ID="cveid_08576034-f69c-479d-8250-7d6494b103de">
+            <CVE_VALUE LANG_REF="und">L_hold</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="bi_exp">
+        <DESCRIPTION LANG_REF="und"/>
+        <CV_ENTRY_ML CVE_ID="cveid_53319ab6-2f76-431d-b408-d8a5c698469c">
+            <CVE_VALUE LANG_REF="und">bi_exp</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="bi_hold">
+        <DESCRIPTION LANG_REF="und"/>
+        <CV_ENTRY_ML CVE_ID="cveid_e21946c7-3082-4a37-a6b0-69937cc1ec31">
+            <CVE_VALUE LANG_REF="und">bi_hold</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="bi_non-touch">
+        <DESCRIPTION LANG_REF="und"/>
+        <CV_ENTRY_ML CVE_ID="cveid_27d746dd-8101-4991-ae5d-4cc69264557e">
+            <CVE_VALUE LANG_REF="und">bi_non-touch</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="L_exp">
+        <DESCRIPTION LANG_REF="und"/>
+        <CV_ENTRY_ML CVE_ID="cveid_24a1504f-9f18-454f-82b4-f6fd72bdcdc3">
+            <CVE_VALUE LANG_REF="und">L_exp</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="L_non-touch">
+        <DESCRIPTION LANG_REF="und"/>
+        <CV_ENTRY_ML CVE_ID="cveid_90c3ce01-2083-4ebd-aab7-1a900cf58ff7">
+            <CVE_VALUE LANG_REF="und">L_non-touch</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="bi_touch">
+        <DESCRIPTION LANG_REF="und"/>
+        <CV_ENTRY_ML CVE_ID="cveid_e21946c7-3082-4a37-a6b0-69937cc1ec31">
+            <CVE_VALUE LANG_REF="und">bi_touch</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="R_hold">
+        <DESCRIPTION LANG_REF="und"/>
+        <CV_ENTRY_ML CVE_ID="cveid_6a8f221e-7c04-4053-be64-33fea251858c">
+            <CVE_VALUE LANG_REF="und">R_hold</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="R_sync">
+        <DESCRIPTION LANG_REF="und"/>
+        <CV_ENTRY_ML CVE_ID="cveid_fdff3e8d-069e-43e8-a591-3afdf4630d1d">
+            <CVE_VALUE LANG_REF="und">R_sync</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+</ANNOTATION_DOCUMENT>

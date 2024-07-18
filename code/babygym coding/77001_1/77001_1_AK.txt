@@ -1,0 +1,10 @@
+"#file:///C:/Users/dell/Desktop/PHD/Movin videos/T1/77001_4mo_baby_gym_c3.avi -- offset: 0, duration: 00:04:57.998 / 297.998 / 297998, ms per sample: 40.0"
+Begin Time - ss.msec	End Time - ss.msec	Duration - ss.msec	R_hold	R_non-touch	L_hold	L-non-touch	bi_hold	bi_non-touch	R_exp	L_exp	bi_exp	R_touch	L_touch	bi_touch	R_sync
+16.24	18.81	2.57		R_non-touch											
+22.57	24.48	1.91		R_non-touch											
+29.68	31.39	1.71		R_non-touch											
+52.4	62.346	9.946													R_sync
+60.09	61.77	1.68		R_non-touch											
+68.29	75.92	7.63													R_sync
+79.666	100.0	20.334													R_sync
+

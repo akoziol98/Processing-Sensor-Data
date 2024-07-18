@@ -1,0 +1,17 @@
+"#file:///C:/Users/dell/Desktop/PHD/Movin videos/T1/77009_1_baby_gym_kam3.avi -- offset: 0, duration: 00:07:36.997 / 456.997 / 456997, ms per sample: 40.0"
+Begin Time - ss.msec	End Time - ss.msec	Duration - ss.msec	R_hold	R_non-touch	L_hold	L-non-touch	bi_hold	bi_non-touch	R_exp	L_exp	bi_exp	R_touch	L_touch	bi_touch	R_sync
+10.758	13.862	3.104								L_exp					
+20.2	20.62	0.42													R_sync
+21.19	21.76	0.57													R_sync
+22.269	22.77	0.501													R_sync
+23.04	23.61	0.57													R_sync
+74.379	77.172	2.793							R_exp						
+88.171	89.312	1.141							R_exp						
+115.128	116.073	0.945							R_exp						
+117.344	118.586	1.242							R_exp						
+126.365	130.307	3.942							R_exp						
+141.344	142.241	0.897							R_exp						
+151.665	152.501	0.836							R_exp						
+155.281	159.135	3.854								L_exp					
+164.931	166.689	1.758							R_exp						
+

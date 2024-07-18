@@ -1,0 +1,13 @@
+// General information: 
+//  MT Manager version: 2020.0.2 
+//  XDA version: 2020.0.2 build 5355 rev 106296 built on 2020-10-15
+// Device information: 
+//  DeviceId: 00B45AFD
+//  ProductCode: MTW2-3A7G6
+//  Firmware Version: 4.4.0
+//  Hardware Version: 2.0.0
+// Device settings: 
+//  Filter Profile: human(46.1)
+//  Option Flags: Orientation Smoother Disabled, Position/Velocity Smoother Disabled, Continuous Zero Rotation Update Disabled, AHS Disabled, ICC Disabled
+// Coordinate system: ENU
+PacketCounter	SampleTimeFine	Acc_X	Acc_Y	Acc_Z	FreeAcc_E	FreeAcc_N	FreeAcc_U	AccHR_X	AccHR_Y	AccHR_Z	Gyr_X	Gyr_Y	Gyr_Z	GyrHR_X	GyrHR_Y	GyrHR_Z	Mag_X	Mag_Y	Mag_Z	VelInc_X	VelInc_Y	VelInc_Z	OriInc_q0	OriInc_q1	OriInc_q2	OriInc_q3	Roll	Pitch	Yaw	Latitude	Longitude	Altitude	Vel_E	Vel_N	Vel_U	Temperature
